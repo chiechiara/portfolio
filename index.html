@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chiara Chiesa — Illustrazione &amp; Concept Art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:40; --pg-s:45%; --pg-l:95%; --ink:#1f1b18; --muted:#6b625a; --card-l:78%; --chip:#1f1b18; --chip-ink:#fff;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--pg-s:25%; --pg-l:12%; --ink:#f4ede4; --muted:#b0a69a; --card-l:70%; --chip:#f4ede4; --chip-ink:#1f1b18}
+}
+:root[data-theme="dark"]{--pg-s:25%; --pg-l:12%; --ink:#f4ede4; --muted:#b0a69a; --card-l:70%; --chip:#f4ede4; --chip-ink:#1f1b18}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*{box-sizing:border-box}
+body{margin:0; font-family:var(--sans); line-height:1.55; color:var(--ink); background:hsl(var(--h) var(--pg-s) var(--pg-l)); transition:background .5s ease; -webkit-font-smoothing:antialiased}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); background:hsl(var(--h) var(--pg-s) var(--pg-l)); transition:background .5s ease; z-index:10}
+header{position:sticky; top:env(safe-area-inset-top,0px); z-index:9; background:hsl(var(--h) var(--pg-s) var(--pg-l)); transition:background .5s ease}
+.bar{max-width:1160px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; gap:12px}
+.logo{font-weight:800; font-size:1.2rem; color:var(--ink); text-decoration:none; letter-spacing:-.02em}
+nav{display:flex; gap:8px}
+nav a{color:var(--ink); text-decoration:none; font-weight:500; font-size:.9rem; padding:8px 16px; border-radius:99px; border:2px solid var(--ink); transition:background .2s,color .2s}
+nav a:hover{background:var(--chip); color:var(--chip-ink)}
+.hero{max-width:1160px; margin:0 auto; padding:72px 24px 48px}
+.hero h1{font-weight:800; font-size:clamp(2.6rem,9vw,6.4rem); line-height:.98; letter-spacing:-.04em; margin:0; max-width:12ch}
+.hero h1 mark{background:hsl(var(--h) 85% 72%); color:#1f1b18; padding:0 .12em; border-radius:.12em; transition:background .5s}
+.hero p{max-width:44ch; margin:28px 0 0; font-size:1.1rem; color:var(--muted)}
+section{max-width:1160px; margin:0 auto; padding:24px}
+h2{font-weight:800; font-size:clamp(1.8rem,4vw,2.6rem); letter-spacing:-.03em; margin:0 0 28px}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:20px}
+.card{background:hsl(var(--c) 85% var(--card-l)); color:#1f1b18; border:0; border-radius:22px; padding:18px; text-align:left; cursor:pointer; font:inherit; display:flex; flex-direction:column; gap:14px; min-height:300px; text-decoration:none; transition:transform .3s cubic-bezier(.3,1.5,.5,1), box-shadow .3s}
+.card:hover,.card:focus-visible{transform:translateY(-8px) rotate(-1.2deg) scale(1.02); box-shadow:0 18px 32px rgba(0,0,0,.18)}
+.card:nth-child(even):hover,.card:nth-child(even):focus-visible{transform:translateY(-8px) rotate(1.2deg) scale(1.02)}
+.card:focus-visible{outline:3px solid var(--ink); outline-offset:3px}
+.pic{flex:1; min-height:170px; border-radius:14px; background:hsl(var(--c) 80% 88%); position:relative; overflow:hidden; display:grid; place-items:center; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(31,27,24,.5)}
+.pic img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s ease}
+.card:hover .pic img{transform:scale(1.06)}
+.pic.ph::before{content:""; position:absolute; width:90px; height:90px; border-radius:50%; background:hsl(var(--c) 80% 68%); left:-20px; bottom:-30px; transition:transform .5s}
+.pic.ph::after{content:""; position:absolute; width:60px; height:60px; border-radius:14px; background:hsl(var(--c) 85% 80%); right:18px; top:16px; transform:rotate(12deg); transition:transform .5s}
+.card:hover .pic.ph::before{transform:scale(1.8) translate(10px,-10px)}
+.card:hover .pic.ph::after{transform:rotate(60deg) scale(1.2)}
+.pic span{position:relative; z-index:1}
+.t{font-weight:700; font-size:1.2rem; line-height:1.2; letter-spacing:-.02em}
+.y{font-size:.85rem; opacity:.7; font-weight:500}
+.about{display:grid; grid-template-columns:minmax(0,280px) 1fr; gap:40px; align-items:start; padding-top:72px}
+.portrait{aspect-ratio:3/4; border-radius:22px; background:hsl(var(--h) 80% 78%); display:grid; place-items:center; color:rgba(31,27,24,.5); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; transition:background .5s}
+.about p{max-width:54ch; margin:0 0 16px}
+.big{display:inline-block; margin-top:8px; background:var(--chip); color:var(--chip-ink); font-weight:700; text-decoration:none; padding:14px 26px; border-radius:99px; transition:transform .25s}
+.big:hover{transform:scale(1.05) rotate(-1deg)}
+.contact a.l{color:var(--ink); font-weight:500}
+footer{max-width:1160px; margin:48px auto 0; padding:24px 24px 40px; border-top:2px solid var(--ink); color:var(--muted); font-size:.85rem}
+/* pagina progetto */
+#progetto{display:none; max-width:1160px; margin:0 auto; padding:32px 24px 0}
+.back{display:inline-block; color:var(--ink); font-weight:500; text-decoration:none; padding:8px 16px; border-radius:99px; border:2px solid var(--ink); font-size:.9rem; margin-bottom:32px}
+.back:hover{background:var(--chip); color:var(--chip-ink)}
+#progetto h1{font-weight:800; font-size:clamp(2.2rem,7vw,5rem); line-height:1; letter-spacing:-.04em; margin:0 0 12px}
+#progetto .anno{display:inline-block; background:hsl(var(--h) 85% 72%); color:#1f1b18; font-weight:700; padding:4px 14px; border-radius:99px; font-size:.9rem; margin-bottom:16px}
+#progetto .did{max-width:52ch; font-size:1.15rem; color:var(--muted); margin:0 0 40px}
+.gal{display:grid; gap:24px}
+.gal img{width:100%; height:auto; display:block; border-radius:18px; cursor:zoom-in}
+.gal .ph{aspect-ratio:16/10; border-radius:18px; background:hsl(var(--h) 80% 86%); display:grid; place-items:center; color:rgba(31,27,24,.5); font-size:.8rem; letter-spacing:.12em; text-transform:uppercase}
+.nextp{display:flex; justify-content:space-between; gap:12px; margin:48px 0 0; flex-wrap:wrap}
+body.in-progetto .vhome{display:none} body.in-progetto #progetto{display:block}
+dialog{border:0; padding:0; background:transparent; max-width:96vw; max-height:96vh}
+dialog::backdrop{background:rgba(15,12,9,.88)}
+dialog img{max-width:96vw; max-height:92vh; border-radius:10px; display:block}
+@media (max-width:700px){.about{grid-template-columns:1fr; gap:24px}.portrait{max-width:220px}.hero{padding-top:48px}nav a{padding:7px 12px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; scroll-behavior:auto!important}.card:hover,.card:focus-visible{transform:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="logo" href="#home">Chiara Chiesa</a>
+    <nav><a href="#home" data-go="lavori">Lavori</a><a href="#home" data-go="about">About</a><a href="#home" data-go="contatti">Contatti</a></nav>
+  </div>
+</header>
+
+<div class="vhome">
+  <div class="hero">
+    <h1>Illustro <mark>storie</mark> a colori.</h1>
+    <p>Chiara Chiesa, illustratrice e concept artist italiana. Libri per l’infanzia, editoria e visual development.</p>
+  </div>
+  <section id="lavori"><h2>Lavori</h2><div class="grid" id="grid"></div></section>
+  <section id="about" class="about">
+    <div class="portrait">foto</div>
+    <div>
+      <h2>About</h2>
+      <p>Qui va la tua biografia: chi sei, dove hai studiato, con chi hai lavorato e che progetti ti piace seguire. Bastano due o tre paragrafi brevi.</p>
+      <p>Puoi aggiungere clienti, editori, mostre e riconoscimenti.</p>
+    </div>
+  </section>
+  <section id="contatti" class="contact">
+    <h2>Lavoriamo insieme?</h2>
+    <p>Per commissioni e collaborazioni scrivimi, oppure trovami su <a class="l" href="http://www.linkedin.com/in/chiara-chiesa-art" rel="noopener">LinkedIn</a>.</p>
+    <a class="big" href="mailto:tuaemail@esempio.it">tuaemail@esempio.it</a>
+  </section>
+</div>
+
+<main id="progetto"></main>
+
+<footer>Tutte le immagini © Chiara Chiesa 2026. Vietata la riproduzione senza consenso scritto.</footer>
+<dialog id="lb"><img alt=""></dialog>
+
+<script src="progetti.js"></script>
+<script>
+var root=document.documentElement, grid=document.getElementById("grid"), pg=document.getElementById("progetto"), lb=document.getElementById("lb");
+function setH(h){root.style.setProperty("--h",h)}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+
+PROGETTI.forEach(function(p){
+  var a=el("a","card"); a.href="#"+p.slug; a.style.setProperty("--c",p.colore);
+  var pic=el("div","pic");
+  if(p.copertina){var im=el("img");im.src=p.copertina;im.alt=p.titolo;im.loading="lazy";pic.appendChild(im)}
+  else{pic.className="pic ph";pic.appendChild(el("span",null,"immagine"))}
+  var d=document.createElement("div"); d.appendChild(el("div","t",p.titolo)); d.appendChild(el("div","y",p.anno));
+  a.appendChild(pic); a.appendChild(d);
+  a.addEventListener("mouseenter",function(){setH(p.colore)});
+  a.addEventListener("focus",function(){setH(p.colore)});
+  grid.appendChild(a);
+});
+grid.addEventListener("mouseleave",function(){setH(40)});
+
+function mostra(p,i){
+  setH(p.colore); pg.innerHTML="";
+  var b=el("a","back","← Tutti i lavori"); b.href="#home";
+  pg.appendChild(b);
+  pg.appendChild(el("h1",null,p.titolo));
+  pg.appendChild(el("div","anno",p.anno));
+  if(p.didascalia) pg.appendChild(el("p","did",p.didascalia));
+  var g=el("div","gal");
+  if(p.immagini&&p.immagini.length){
+    p.immagini.forEach(function(s){var im=el("img");im.src=s;im.alt=p.titolo;im.loading="lazy";
+      im.onclick=function(){lb.querySelector("img").src=s;lb.showModal()};g.appendChild(im)});
+  } else { g.appendChild(el("div","ph","immagini in arrivo")); }
+  pg.appendChild(g);
+  var n=el("div","nextp");
+  var prev=PROGETTI[(i+PROGETTI.length-1)%PROGETTI.length], next=PROGETTI[(i+1)%PROGETTI.length];
+  var pa=el("a","back","← "+prev.titolo); pa.href="#"+prev.slug;
+  var na=el("a","back",next.titolo+" →"); na.href="#"+next.slug;
+  n.appendChild(pa); n.appendChild(na); pg.appendChild(n);
+  document.title=p.titolo+" — Chiara Chiesa";
+}
+function route(){
+  var h=location.hash.replace("#",""), i=-1;
+  PROGETTI.forEach(function(p,k){if(p.slug===h)i=k});
+  if(i>=0){document.body.classList.add("in-progetto");mostra(PROGETTI[i],i);window.scrollTo(0,0)}
+  else{document.body.classList.remove("in-progetto");setH(40);document.title="Chiara Chiesa — Illustrazione & Concept Art";
+    var t=window._go; window._go=null; if(t){var e=document.getElementById(t); if(e)setTimeout(function(){e.scrollIntoView()},30)}}
+}
+document.querySelectorAll("nav a").forEach(function(a){a.addEventListener("click",function(){
+  window._go=a.dataset.go;
+  if(!document.body.classList.contains("in-progetto")){var e=document.getElementById(a.dataset.go);if(e){e.scrollIntoView({behavior:"smooth"});window._go=null}}
+})});
+lb.addEventListener("click",function(){lb.close()});
+window.addEventListener("hashchange",route); route();
+</script>
+</body>
+</html>
